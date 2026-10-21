@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080a0d">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Metaphasor is an independent artificial intelligence company. A new phase is taking shape.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Metaphasor — A new phase is taking shape.">
+  <meta property="og:description" content="Independent artificial intelligence. In development.">
+  <meta property="og:site_name" content="Metaphasor">
+  <meta property="og:url" content="https://metaphasor.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Metaphasor — A New Phase</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080a0e;
+      --ink: #f3f6f4;
+      --muted: #8a9298;
+      --line: rgba(214,239,227,.115);
+      --mint: #baf9d0;
+      --glow: #94e7be;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { min-width: 320px; background: var(--bg); }
+    body { margin: 0; min-height: 100vh; font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+    ::selection { background: #a1edbe; color: #07120d; }
+    .site { position: relative; min-height: 100svh; display: flex; flex-direction: column; isolation: isolate; overflow: hidden; background: radial-gradient(ellipse 57% 67% at 77% 47%, #101a1c 0%, transparent 72%), radial-gradient(ellipse 40% 45% at 95% 3%, rgba(43,54,62,.18), transparent 85%), #080a0e; }
+    .site::before { content: ""; pointer-events: none; position: absolute; z-index: -1; inset: 0; opacity: .29; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.17'/%3E%3C/svg%3E"); }
+    .site::after { content: ""; position: absolute; pointer-events: none; z-index: -1; inset: 0; background: linear-gradient(180deg,rgba(0,0,0,.12),transparent 29%,transparent 70%,rgba(0,0,0,.32)); }
+    .topbar, .bottom { width: min(100% - 124px, 1450px); margin-inline: auto; }
+    .topbar { min-height: 117px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+    .brand { display: inline-flex; align-items: center; gap: 15px; font-weight: 650; font-size: 22px; letter-spacing: -.065em; text-decoration: none; color: #f3f6f4; }
+    .brandmark { width: 29px; height: 29px; overflow: visible; }
+    .brandmark path { stroke: #c5f6d8; stroke-width: 1.6; fill: none; stroke-linecap: round; }
+    .status-label-short { display: none; }
+    .top-right { display: inline-flex; align-items: center; gap: 12px; font-size: 10px; text-transform: uppercase; letter-spacing: .20em; font-weight: 650; color: #aab5b4; }
+    .status-pulse { width: 7px; height: 7px; background: #a7f2c0; border-radius: 50%; box-shadow: 0 0 0 5px rgba(158,237,184,.075),0 0 17px rgba(162,250,192,.48); animation: pulse 3s ease-in-out infinite; }
+    main { flex: 1; min-height: 620px; width: min(100% - 124px, 1450px); margin-inline: auto; display: flex; align-items: center; position: relative; padding: 72px 0 100px; }
+    .content { z-index: 2; width: min(790px, 61%); position: relative; }
+    .eyebrow { display: flex; gap: 17px; align-items: center; color: var(--mint); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .24em; margin-bottom: 32px; }
+    .eyebrow::before { content: ""; width: 30px; height: 1px; background: #a0dcb9; }
+    h1 { font-size: clamp(66px, 6.8vw, 115px); line-height: 1.018; letter-spacing: -.084em; font-weight: 550; margin: 0; }
+    h1 em { display: block; font-style: normal; color: #accfbf; background: linear-gradient(100deg,#b9e7d0 0%,#e8f4eb 48%,#a1a7bd 94%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .lead { margin: 36px 0 0; max-width: 450px; color: #a8b3b3; font-size: clamp(17px,1.37vw,19px); font-weight: 380; line-height: 1.8; letter-spacing: -.019em; }
+    .quiet-rule { display: flex; align-items: center; gap: 16px; margin-top: 62px; }
+    .quiet-rule span { font-size: 10px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #748982; }
+    .quiet-rule::before { content: ""; width: 41px; height: 1px; background: #789d8a; opacity: .65; }
+    .art { position: absolute; top: 50%; right: max(-8.5vw,-110px); width: min(59vw, 870px); transform: translateY(-51%); aspect-ratio: 1; pointer-events: none; }
+    .art::before { content: ""; position: absolute; inset: 16%; border-radius: 50%; background: radial-gradient(circle,rgba(104,241,182,.08),rgba(73,131,142,.04) 35%,transparent 73%); filter: blur(31px); }
+    .art svg { width: 100%; height: 100%; overflow: visible; animation: hover 10s ease-in-out infinite; }
+    .orbital-main { transform-origin: center; animation: orbit 46s linear infinite; }
+    .orbital-secondary { transform-origin: center; animation: orbit-reverse 52s linear infinite; }
+    .orbital-third { transform-origin: center; animation: orbit 62s linear infinite; }
+    .bottom { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 27px 0 34px; border-top: 1px solid var(--line); }
+    .copyright, .signature { text-transform: uppercase; font-size: 10px; font-weight: 600; letter-spacing: .18em; color: #737e80; white-space: nowrap; }
+    .signature { color: #a4adae; }
+    .bottom-center { display: flex; gap: 8px; align-items: center; justify-content: center; opacity: .5; }
+    .bottom-center span { display: block; width: 3px; height: 3px; border: 1px solid #91caaa; transform: rotate(45deg); }
+    .bottom-center span:nth-child(2) { width: 5px; height: 5px; background: #91caaa; }
+    @keyframes hover { 0%,100% { transform: translateY(0px) rotate(-1.2deg); } 50% { transform: translateY(-13px) rotate(1.2deg); } }
+    @keyframes orbit { to { transform: rotate(360deg); } }
+    @keyframes orbit-reverse { to { transform: rotate(-360deg); } }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .45; } }
+    @media (max-width: 1050px) {
+      .topbar,.bottom,main { width: calc(100% - 84px); }
+      h1 { font-size: clamp(64px, 8vw, 93px); }
+      .content { width: 68%; }
+      .art { right: -28%; width: 82%; opacity: .83; }
+    }
+    @media (max-width: 680px) {
+      .topbar,.bottom,main { width: calc(100% - 46px); }
+      .topbar { min-height: 84px; }
+      .brand { font-size: 20px; }
+      .brandmark { width: 26px; height: 26px; }
+      .top-right { font-size: 9px; letter-spacing: .13em; gap: 10px; }
+      .status-label-full { display: none; }
+      .status-label-short { display: inline; }
+      main { min-height: 650px; padding: 61px 0 86px; align-items: flex-end; }
+      .art { width: 128vw; max-width: none; right: -70vw; top: 34%; opacity: .62; }
+      .content { width: 100%; }
+      .eyebrow { font-size: 9px; letter-spacing: .18em; gap: 11px; margin-bottom: 24px; }
+      .eyebrow::before { width: 22px; }
+      h1 { font-size: clamp(58px, 11.9vw, 84px); line-height: 1.04; letter-spacing: -.074em; }
+      .lead { margin-top: 25px; font-size: 16px; max-width: 370px; line-height: 1.72; }
+      .quiet-rule { margin-top: 38px; }
+      .quiet-rule span { font-size: 9px; }
+      .bottom { padding-top: 23px; padding-bottom: 27px; }
+      .copyright,.signature { font-size: 8px; letter-spacing: .11em; }
+      .bottom-center { display: none; }
+    }
+    @media (max-width: 365px) {
+      .topbar,.bottom,main { width: calc(100% - 36px); }
+      .top-right { letter-spacing: 0; font-size: 8px; }
+      .brand { gap: 8px; font-size: 18px; }
+      .brandmark { width: 22px; height: 22px; }
+      h1 { font-size: 53px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Metaphasor home">
+        <svg class="brandmark" viewBox="0 0 32 32" role="img" aria-label="Metaphasor symbol">
+          <path d="M3.8 24.5 10.1 7.5l6 13.4 6-13.4 6.1 17"/>
+          <path opacity=".5" d="M3.8 17.5h24.5"/>
+          <path d="M9.8 17.5h12.5"/>
+        </svg>
+        metaphasor
+      </a>
+      <div class="top-right"><span class="status-pulse" aria-hidden="true"></span> <span class="status-label-full">Independent AI / In development</span><span class="status-label-short">In development</span></div>
+    </header>
+
+    <main>
+      <div class="content">
+        <div class="eyebrow">Artificial intelligence · Research &amp; development</div>
+        <h1>A new phase<br><em>is taking shape.</em></h1>
+        <p class="lead">Metaphasor is an independent artificial intelligence company. We're exploring what comes next — and building it quietly.</p>
+        <div class="quiet-rule"><span>More to come</span></div>
+      </div>
+
+      <div class="art" aria-hidden="true">
+        <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="aura"><stop stop-color="#91eac0" stop-opacity=".2"/><stop offset=".47" stop-color="#4aa19e" stop-opacity=".08"/><stop offset="1" stop-color="#050b12" stop-opacity="0"/></radialGradient>
+            <radialGradient id="core" cx=".36" cy=".3" r=".75">
+              <stop stop-color="#d5fff0" stop-opacity=".95"/>
+              <stop offset=".18" stop-color="#87e8c4" stop-opacity=".58"/>
+              <stop offset=".51" stop-color="#385d63" stop-opacity=".12"/>
+              <stop offset="1" stop-color="#0b141b" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="strokeA" x1="0" x2="1" y1="0" y2="1">
+              <stop stop-color="#b8f7d4" stop-opacity="0"/>
+              <stop offset=".23" stop-color="#a9f2d0" stop-opacity=".1"/>
+              <stop offset=".49" stop-color="#c3ffe0" stop-opacity=".88"/>
+              <stop offset=".78" stop-color="#9fa9dd" stop-opacity=".45"/>
+              <stop offset="1" stop-color="#9fa9dd" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="strokeB" x1="1" x2="0" y1="0" y2="1">
+              <stop stop-color="#86d9c2" stop-opacity="0"/>
+              <stop offset=".29" stop-color="#98e9d3" stop-opacity=".72"/>
+              <stop offset=".52" stop-color="#a0d1e4" stop-opacity=".23"/>
+              <stop offset=".82" stop-color="#c5c3ff" stop-opacity=".62"/>
+              <stop offset="1" stop-color="#adf9d4" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="strokeC" x1="0" x2="1" y1="1" y2="0">
+              <stop stop-color="#89d3ba" stop-opacity="0"/>
+              <stop offset=".24" stop-color="#89d3ba" stop-opacity=".23"/>
+              <stop offset=".56" stop-color="#e0fff0" stop-opacity=".78"/>
+              <stop offset=".81" stop-color="#8fc5bd" stop-opacity=".26"/>
+              <stop offset="1" stop-color="#8fc5bd" stop-opacity="0"/>
+            </linearGradient>
+            <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="8"/></filter>
+            <filter id="dotGlow" x="-500%" y="-500%" width="1100%" height="1100%"><feGaussianBlur stdDeviation="5"/></filter>
+          </defs>
+          <circle cx="400" cy="400" r="345" fill="url(#aura)"/>
+          <circle cx="400" cy="400" r="203" fill="url(#core)" opacity=".48"/>
+          <g fill="none" stroke-width="1.1">
+            <circle cx="400" cy="400" r="245" stroke="#8cefc3" stroke-opacity=".085" stroke-dasharray="1 11"/>
+            <circle cx="400" cy="400" r="307" stroke="#9eb4c3" stroke-opacity=".08" stroke-dasharray="2 13"/>
+            <path d="M400 56v688M56 400h688" stroke="#a9f2dc" stroke-opacity=".045"/>
+          </g>
+          <g class="orbital-main" fill="none" transform="rotate(26 400 400)">
+            <ellipse cx="400" cy="400" rx="282" ry="170" stroke="#82f7c7" stroke-width="13" opacity=".10" filter="url(#softGlow)"/>
+            <ellipse cx="400" cy="400" rx="282" ry="170" stroke="url(#strokeA)" stroke-width="1.7"/>
+            <ellipse cx="400" cy="400" rx="269" ry="157" stroke="#c3f8e2" stroke-opacity=".1" stroke-width=".65"/>
+          </g>
+          <g class="orbital-secondary" fill="none" transform="rotate(-39 400 400)">
+            <ellipse cx="400" cy="400" rx="273" ry="179" stroke="#c0c0fa" stroke-width="13" opacity=".07" filter="url(#softGlow)"/>
+            <ellipse cx="400" cy="400" rx="273" ry="179" stroke="url(#strokeB)" stroke-width="1.8"/>
+            <ellipse cx="400" cy="400" rx="257" ry="161" stroke="#c7d2f5" stroke-opacity=".1" stroke-width=".65"/>
+          </g>
+          <g class="orbital-third" fill="none" transform="rotate(100 400 400)">
+            <ellipse cx="400" cy="400" rx="300" ry="123" stroke="#a5ffe0" stroke-width="10" opacity=".07" filter="url(#softGlow)"/>
+            <ellipse cx="400" cy="400" rx="300" ry="123" stroke="url(#strokeC)" stroke-width="1.3"/>
+          </g>
+          <circle cx="400" cy="400" r="85" fill="url(#core)" opacity=".19"/>
+          <circle cx="400" cy="400" r="5" fill="#d9ffea" opacity=".7" filter="url(#dotGlow)"/>
+          <circle cx="400" cy="400" r="2.3" fill="#dcffec" opacity=".85"/>
+          <circle cx="210" cy="235" r="3.5" fill="#b4f8db" opacity=".92"/>
+          <circle cx="210" cy="235" r="14" fill="#b4f8db" opacity=".22" filter="url(#dotGlow)"/>
+          <circle cx="591" cy="522" r="2.2" fill="#c9cdf9" opacity=".8"/>
+          <circle cx="591" cy="522" r="12" fill="#c9cdf9" opacity=".2" filter="url(#dotGlow)"/>
+          <path d="M400 70v22M400 708v22M70 400h22M708 400h22" stroke="#c6edda" stroke-opacity=".19"/>
+        </svg>
+      </div>
+    </main>
+
+    <footer class="bottom">
+      <span class="copyright">© <span id="year">2026</span> Metaphasor</span>
+      <div class="bottom-center" aria-hidden="true"><span></span><span></span><span></span></div>
+      <span class="signature">The future is in formation.</span>
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
