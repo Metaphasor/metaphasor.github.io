@@ -11,9 +11,13 @@
   <meta property="og:description" content="Independent artificial intelligence. In development.">
   <meta property="og:site_name" content="Metaphasor">
   <meta property="og:url" content="https://metaphasor.com/">
+  <meta property="og:image" content="https://metaphasor.com/og.png">
+  <meta name="twitter:image" content="https://metaphasor.com/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <title>Metaphasor — A New Phase</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <style>
     :root {
       color-scheme: dark;
@@ -34,8 +38,7 @@
     .topbar, .bottom { width: min(100% - 124px, 1450px); margin-inline: auto; }
     .topbar { min-height: 117px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
     .brand { display: inline-flex; align-items: center; gap: 15px; font-weight: 650; font-size: 22px; letter-spacing: -.065em; text-decoration: none; color: #f3f6f4; }
-    .brandmark { width: 29px; height: 29px; overflow: visible; }
-    .brandmark path { stroke: #c5f6d8; stroke-width: 1.6; fill: none; stroke-linecap: round; }
+    .brandmark { width: 32px; height: 32px; display: block; filter: drop-shadow(0 0 10px rgba(110,235,190,.28)); }
     .status-label-short { display: none; }
     .top-right { display: inline-flex; align-items: center; gap: 12px; font-size: 10px; text-transform: uppercase; letter-spacing: .20em; font-weight: 650; color: #aab5b4; }
     .status-pulse { width: 7px; height: 7px; background: #a7f2c0; border-radius: 50%; box-shadow: 0 0 0 5px rgba(158,237,184,.075),0 0 17px rgba(162,250,192,.48); animation: pulse 3s ease-in-out infinite; }
@@ -75,7 +78,7 @@
       .topbar,.bottom,main { width: calc(100% - 46px); }
       .topbar { min-height: 84px; }
       .brand { font-size: 20px; }
-      .brandmark { width: 26px; height: 26px; }
+      .brandmark { width: 28px; height: 28px; }
       .top-right { font-size: 9px; letter-spacing: .13em; gap: 10px; }
       .status-label-full { display: none; }
       .status-label-short { display: inline; }
@@ -96,7 +99,7 @@
       .topbar,.bottom,main { width: calc(100% - 36px); }
       .top-right { letter-spacing: 0; font-size: 8px; }
       .brand { gap: 8px; font-size: 18px; }
-      .brandmark { width: 22px; height: 22px; }
+      .brandmark { width: 24px; height: 24px; }
       h1 { font-size: 53px; }
     }
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; } }
@@ -106,11 +109,7 @@
   <div class="site">
     <header class="topbar">
       <a class="brand" href="/" aria-label="Metaphasor home">
-        <svg class="brandmark" viewBox="0 0 32 32" role="img" aria-label="Metaphasor symbol">
-          <path d="M3.8 24.5 10.1 7.5l6 13.4 6-13.4 6.1 17"/>
-          <path opacity=".5" d="M3.8 17.5h24.5"/>
-          <path d="M9.8 17.5h12.5"/>
-        </svg>
+        <img class="brandmark" src="mark.png" width="32" height="32" alt="">
         metaphasor
       </a>
       <div class="top-right"><span class="status-pulse" aria-hidden="true"></span> <span class="status-label-full">Independent AI / In development</span><span class="status-label-short">In development</span></div>
