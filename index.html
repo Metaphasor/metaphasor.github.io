@@ -47,32 +47,38 @@
     .eyebrow { display: flex; gap: 17px; align-items: center; color: var(--mint); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .24em; margin-bottom: 32px; }
     .eyebrow::before { content: ""; width: 30px; height: 1px; background: #a0dcb9; }
     h1 { font-size: clamp(66px, 6.8vw, 115px); line-height: 1.018; letter-spacing: -.084em; font-weight: 550; margin: 0; }
-    h1 em { display: block; font-style: normal; color: #accfbf; background: linear-gradient(100deg,#b9e7d0 0%,#e8f4eb 48%,#a1a7bd 94%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    h1 em { display: block; padding-bottom: .14em; margin-bottom: -.14em; font-style: normal; color: #accfbf; background: linear-gradient(100deg,#b9e7d0 0%,#e8f4eb 48%,#a1a7bd 94%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
     .lead { margin: 36px 0 0; max-width: 450px; color: #a8b3b3; font-size: clamp(17px,1.37vw,19px); font-weight: 380; line-height: 1.8; letter-spacing: -.019em; }
     .quiet-rule { display: flex; align-items: center; gap: 16px; margin-top: 62px; }
-    .quiet-rule span { font-size: 10px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #748982; }
+    .quiet-rule span { font-size: 10px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #8aa197; }
     .quiet-rule::before { content: ""; width: 41px; height: 1px; background: #789d8a; opacity: .65; }
-    .art { position: absolute; top: 50%; right: max(-8.5vw,-110px); width: min(59vw, 870px); transform: translateY(-51%); aspect-ratio: 1; pointer-events: none; }
-    .art::before { content: ""; position: absolute; inset: 16%; border-radius: 50%; background: radial-gradient(circle,rgba(104,241,182,.08),rgba(73,131,142,.04) 35%,transparent 73%); filter: blur(31px); }
-    .art svg { width: 100%; height: 100%; overflow: visible; animation: hover 10s ease-in-out infinite; }
-    .orbital-main { transform-origin: center; animation: orbit 46s linear infinite; }
-    .orbital-secondary { transform-origin: center; animation: orbit-reverse 52s linear infinite; }
-    .orbital-third { transform-origin: center; animation: orbit 62s linear infinite; }
+    .art { position: absolute; top: 50%; right: -4vw; width: min(56vw, 860px); transform: translateY(-50%); aspect-ratio: 1; pointer-events: none; }
+    .art svg { width: 100%; height: 100%; display: block; }
+    .ring { fill: none; stroke-linecap: round; }
+    .ring-base { stroke: #9ff0cd; stroke-opacity: .16; stroke-width: 1.1; }
+    .ring-trail, .ring-head, .ring-dot, .ring-halo { animation: travel var(--t) linear infinite; animation-delay: var(--d, 0s); }
+    .ring-trail { stroke: #aef5d2; stroke-opacity: .5; stroke-width: 1.6; stroke-dasharray: 26 74; --o: 0; }
+    .ring-head { stroke: #e6fff3; stroke-opacity: .85; stroke-width: 2.2; stroke-dasharray: 7 93; --o: -19; }
+    .ring-halo { stroke: #8ff0c4; stroke-opacity: .16; stroke-width: 18; stroke-dasharray: .01 99.99; --o: -26; }
+    .ring-dot { stroke: #f2fffa; stroke-width: 6; stroke-dasharray: .01 99.99; --o: -26; }
+    .ring.violet .ring-base { stroke: #b9bdf5; stroke-opacity: .15; }
+    .ring.violet .ring-trail { stroke: #bfc3fb; }
+    .ring.violet .ring-halo { stroke: #aab0f7; }
+    .twinkle { animation: pulse 5s ease-in-out infinite; }
+    .twinkle.b { animation-delay: -2.4s; animation-duration: 6.5s; }
     .bottom { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 27px 0 34px; border-top: 1px solid var(--line); }
-    .copyright, .signature { text-transform: uppercase; font-size: 10px; font-weight: 600; letter-spacing: .18em; color: #737e80; white-space: nowrap; }
+    .copyright, .signature { text-transform: uppercase; font-size: 10px; font-weight: 600; letter-spacing: .18em; color: #8b9597; white-space: nowrap; }
     .signature { color: #a4adae; }
     .bottom-center { display: flex; gap: 8px; align-items: center; justify-content: center; opacity: .5; }
     .bottom-center span { display: block; width: 3px; height: 3px; border: 1px solid #91caaa; transform: rotate(45deg); }
     .bottom-center span:nth-child(2) { width: 5px; height: 5px; background: #91caaa; }
-    @keyframes hover { 0%,100% { transform: translateY(0px) rotate(-1.2deg); } 50% { transform: translateY(-13px) rotate(1.2deg); } }
-    @keyframes orbit { to { transform: rotate(360deg); } }
-    @keyframes orbit-reverse { to { transform: rotate(-360deg); } }
+    @keyframes travel { from { stroke-dashoffset: var(--o); } to { stroke-dashoffset: calc(var(--o) - 100); } }
     @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .45; } }
     @media (max-width: 1050px) {
       .topbar,.bottom,main { width: calc(100% - 84px); }
       h1 { font-size: clamp(64px, 8vw, 93px); }
       .content { width: 68%; }
-      .art { right: -28%; width: 82%; opacity: .83; }
+      .art { right: -13vw; width: 76vw; opacity: .85; }
     }
     @media (max-width: 680px) {
       .topbar,.bottom,main { width: calc(100% - 46px); }
@@ -83,7 +89,8 @@
       .status-label-full { display: none; }
       .status-label-short { display: inline; }
       main { min-height: 650px; padding: 61px 0 86px; align-items: flex-end; }
-      .art { width: 128vw; max-width: none; right: -70vw; top: 34%; opacity: .62; }
+      .art { width: 120vw; max-width: none; right: auto; left: 50%; top: 31%; transform: translate(-50%, -50%); opacity: .5; }
+      .eb-more { display: none; }
       .content { width: 100%; }
       .eyebrow { font-size: 9px; letter-spacing: .18em; gap: 11px; margin-bottom: 24px; }
       .eyebrow::before { width: 22px; }
@@ -92,7 +99,7 @@
       .quiet-rule { margin-top: 38px; }
       .quiet-rule span { font-size: 9px; }
       .bottom { padding-top: 23px; padding-bottom: 27px; }
-      .copyright,.signature { font-size: 8px; letter-spacing: .11em; }
+      .copyright,.signature { font-size: 9px; letter-spacing: .1em; }
       .bottom-center { display: none; }
     }
     @media (max-width: 365px) {
@@ -117,7 +124,7 @@
 
     <main>
       <div class="content">
-        <div class="eyebrow">Artificial intelligence · Research &amp; development</div>
+        <div class="eyebrow"><span>Artificial intelligence<span class="eb-more"> · Research &amp; development</span></span></div>
         <h1>A new phase<br><em>is taking shape.</em></h1>
         <p class="lead">Metaphasor is an independent artificial intelligence company. We're exploring what comes next — and building it quietly.</p>
         <div class="quiet-rule"><span>More to come</span></div>
@@ -126,66 +133,52 @@
       <div class="art" aria-hidden="true">
         <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <radialGradient id="aura"><stop stop-color="#91eac0" stop-opacity=".2"/><stop offset=".47" stop-color="#4aa19e" stop-opacity=".08"/><stop offset="1" stop-color="#050b12" stop-opacity="0"/></radialGradient>
-            <radialGradient id="core" cx=".36" cy=".3" r=".75">
-              <stop stop-color="#d5fff0" stop-opacity=".95"/>
-              <stop offset=".18" stop-color="#87e8c4" stop-opacity=".58"/>
-              <stop offset=".51" stop-color="#385d63" stop-opacity=".12"/>
+            <radialGradient id="aura"><stop stop-color="#91eac0" stop-opacity=".16"/><stop offset=".5" stop-color="#4aa19e" stop-opacity=".06"/><stop offset="1" stop-color="#050b12" stop-opacity="0"/></radialGradient>
+            <radialGradient id="core" cx=".42" cy=".4" r=".62">
+              <stop stop-color="#d5fff0" stop-opacity=".5"/>
+              <stop offset=".3" stop-color="#87e8c4" stop-opacity=".22"/>
+              <stop offset=".65" stop-color="#385d63" stop-opacity=".07"/>
               <stop offset="1" stop-color="#0b141b" stop-opacity="0"/>
             </radialGradient>
-            <linearGradient id="strokeA" x1="0" x2="1" y1="0" y2="1">
-              <stop stop-color="#b8f7d4" stop-opacity="0"/>
-              <stop offset=".23" stop-color="#a9f2d0" stop-opacity=".1"/>
-              <stop offset=".49" stop-color="#c3ffe0" stop-opacity=".88"/>
-              <stop offset=".78" stop-color="#9fa9dd" stop-opacity=".45"/>
-              <stop offset="1" stop-color="#9fa9dd" stop-opacity="0"/>
-            </linearGradient>
-            <linearGradient id="strokeB" x1="1" x2="0" y1="0" y2="1">
-              <stop stop-color="#86d9c2" stop-opacity="0"/>
-              <stop offset=".29" stop-color="#98e9d3" stop-opacity=".72"/>
-              <stop offset=".52" stop-color="#a0d1e4" stop-opacity=".23"/>
-              <stop offset=".82" stop-color="#c5c3ff" stop-opacity=".62"/>
-              <stop offset="1" stop-color="#adf9d4" stop-opacity="0"/>
-            </linearGradient>
-            <linearGradient id="strokeC" x1="0" x2="1" y1="1" y2="0">
-              <stop stop-color="#89d3ba" stop-opacity="0"/>
-              <stop offset=".24" stop-color="#89d3ba" stop-opacity=".23"/>
-              <stop offset=".56" stop-color="#e0fff0" stop-opacity=".78"/>
-              <stop offset=".81" stop-color="#8fc5bd" stop-opacity=".26"/>
-              <stop offset="1" stop-color="#8fc5bd" stop-opacity="0"/>
-            </linearGradient>
-            <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="8"/></filter>
-            <filter id="dotGlow" x="-500%" y="-500%" width="1100%" height="1100%"><feGaussianBlur stdDeviation="5"/></filter>
           </defs>
-          <circle cx="400" cy="400" r="345" fill="url(#aura)"/>
-          <circle cx="400" cy="400" r="203" fill="url(#core)" opacity=".48"/>
+          <circle cx="400" cy="400" r="390" fill="url(#aura)"/>
+          <circle cx="400" cy="400" r="190" fill="url(#core)"/>
           <g fill="none" stroke-width="1.1">
-            <circle cx="400" cy="400" r="245" stroke="#8cefc3" stroke-opacity=".085" stroke-dasharray="1 11"/>
-            <circle cx="400" cy="400" r="307" stroke="#9eb4c3" stroke-opacity=".08" stroke-dasharray="2 13"/>
-            <path d="M400 56v688M56 400h688" stroke="#a9f2dc" stroke-opacity=".045"/>
+            <circle cx="400" cy="400" r="232" stroke="#8cefc3" stroke-opacity=".1" stroke-dasharray="1 11"/>
+            <circle cx="400" cy="400" r="315" stroke="#9eb4c3" stroke-opacity=".08" stroke-dasharray="2 13"/>
+            <path d="M400 70v700M70 400h660" stroke="#a9f2dc" stroke-opacity=".04"/>
           </g>
-          <g class="orbital-main" fill="none" transform="rotate(26 400 400)">
-            <ellipse cx="400" cy="400" rx="282" ry="170" stroke="#82f7c7" stroke-width="13" opacity=".10" filter="url(#softGlow)"/>
-            <ellipse cx="400" cy="400" rx="282" ry="170" stroke="url(#strokeA)" stroke-width="1.7"/>
-            <ellipse cx="400" cy="400" rx="269" ry="157" stroke="#c3f8e2" stroke-opacity=".1" stroke-width=".65"/>
+          <g transform="rotate(24 400 400)">
+            <g class="ring">
+              <path class="ring-base" d="M100 400a300 138 0 1 0 600 0a300 138 0 1 0 -600 0" pathLength="100"/>
+              <path class="ring-trail" d="M100 400a300 138 0 1 0 600 0a300 138 0 1 0 -600 0" pathLength="100" style="--t:46s;--d:-0s"/>
+              <path class="ring-head" d="M100 400a300 138 0 1 0 600 0a300 138 0 1 0 -600 0" pathLength="100" style="--t:46s;--d:-0s"/>
+              <path class="ring-halo" d="M100 400a300 138 0 1 0 600 0a300 138 0 1 0 -600 0" pathLength="100" style="--t:46s;--d:-0s"/>
+              <path class="ring-dot" d="M100 400a300 138 0 1 0 600 0a300 138 0 1 0 -600 0" pathLength="100" style="--t:46s;--d:-0s"/>
+            </g>
           </g>
-          <g class="orbital-secondary" fill="none" transform="rotate(-39 400 400)">
-            <ellipse cx="400" cy="400" rx="273" ry="179" stroke="#c0c0fa" stroke-width="13" opacity=".07" filter="url(#softGlow)"/>
-            <ellipse cx="400" cy="400" rx="273" ry="179" stroke="url(#strokeB)" stroke-width="1.8"/>
-            <ellipse cx="400" cy="400" rx="257" ry="161" stroke="#c7d2f5" stroke-opacity=".1" stroke-width=".65"/>
+          <g transform="rotate(-38 400 400)">
+            <g class="ring violet">
+              <path class="ring-base" d="M112 400a288 176 0 1 0 576 0a288 176 0 1 0 -576 0" pathLength="100"/>
+              <path class="ring-trail" d="M112 400a288 176 0 1 0 576 0a288 176 0 1 0 -576 0" pathLength="100" style="--t:62s;--d:-21s"/>
+              <path class="ring-head" d="M112 400a288 176 0 1 0 576 0a288 176 0 1 0 -576 0" pathLength="100" style="--t:62s;--d:-21s"/>
+              <path class="ring-halo" d="M112 400a288 176 0 1 0 576 0a288 176 0 1 0 -576 0" pathLength="100" style="--t:62s;--d:-21s"/>
+              <path class="ring-dot" d="M112 400a288 176 0 1 0 576 0a288 176 0 1 0 -576 0" pathLength="100" style="--t:62s;--d:-21s"/>
+            </g>
           </g>
-          <g class="orbital-third" fill="none" transform="rotate(100 400 400)">
-            <ellipse cx="400" cy="400" rx="300" ry="123" stroke="#a5ffe0" stroke-width="10" opacity=".07" filter="url(#softGlow)"/>
-            <ellipse cx="400" cy="400" rx="300" ry="123" stroke="url(#strokeC)" stroke-width="1.3"/>
+          <g transform="rotate(100 400 400)">
+            <g class="ring">
+              <path class="ring-base" d="M100 400a300 96 0 1 0 600 0a300 96 0 1 0 -600 0" pathLength="100"/>
+              <path class="ring-trail" d="M100 400a300 96 0 1 0 600 0a300 96 0 1 0 -600 0" pathLength="100" style="--t:78s;--d:-40s"/>
+              <path class="ring-head" d="M100 400a300 96 0 1 0 600 0a300 96 0 1 0 -600 0" pathLength="100" style="--t:78s;--d:-40s"/>
+              <path class="ring-halo" d="M100 400a300 96 0 1 0 600 0a300 96 0 1 0 -600 0" pathLength="100" style="--t:78s;--d:-40s"/>
+              <path class="ring-dot" d="M100 400a300 96 0 1 0 600 0a300 96 0 1 0 -600 0" pathLength="100" style="--t:78s;--d:-40s"/>
+            </g>
           </g>
-          <circle cx="400" cy="400" r="85" fill="url(#core)" opacity=".19"/>
-          <circle cx="400" cy="400" r="5" fill="#d9ffea" opacity=".7" filter="url(#dotGlow)"/>
-          <circle cx="400" cy="400" r="2.3" fill="#dcffec" opacity=".85"/>
-          <circle cx="210" cy="235" r="3.5" fill="#b4f8db" opacity=".92"/>
-          <circle cx="210" cy="235" r="14" fill="#b4f8db" opacity=".22" filter="url(#dotGlow)"/>
-          <circle cx="591" cy="522" r="2.2" fill="#c9cdf9" opacity=".8"/>
-          <circle cx="591" cy="522" r="12" fill="#c9cdf9" opacity=".2" filter="url(#dotGlow)"/>
-          <path d="M400 70v22M400 708v22M70 400h22M708 400h22" stroke="#c6edda" stroke-opacity=".19"/>
+          <circle cx="400" cy="400" r="2.4" fill="#dcffec" opacity=".9"/>
+          <circle cx="400" cy="400" r="14" fill="#c8ffe6" opacity=".14"/>
+          <g class="twinkle"><circle cx="205" cy="240" r="3.2" fill="#b4f8db"/><circle cx="205" cy="240" r="13" fill="#b4f8db" opacity=".2"/></g>
+          <g class="twinkle b"><circle cx="602" cy="545" r="2.3" fill="#c9cdf9"/><circle cx="602" cy="545" r="11" fill="#c9cdf9" opacity=".2"/></g>
         </svg>
       </div>
     </main>
