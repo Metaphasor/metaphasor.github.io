@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080a0e">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Metaphasor is an independent artificial intelligence company founded by Chris Speciale.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About Metaphasor">
+  <meta property="og:description" content="An independent artificial intelligence company founded by Chris Speciale.">
+  <meta property="og:site_name" content="Metaphasor">
+  <meta property="og:url" content="https://metaphasor.com/about">
+  <meta property="og:image" content="https://metaphasor.com/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Metaphasor mark on a dark background">
+  <meta name="twitter:image" content="https://metaphasor.com/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>About Metaphasor</title>
+  <link rel="canonical" href="https://metaphasor.com/about">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080a0e;
+      --ink: #f3f6f4;
+      --soft: #a8b3b3;
+      --line: rgba(214,239,227,.115);
+      --mint: #baf9d0;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { min-width: 320px; background: var(--bg); }
+    body { margin: 0; min-height: 100vh; font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+    ::selection { background: #a1edbe; color: #07120d; }
+    .site { position: relative; min-height: 100svh; display: flex; flex-direction: column; isolation: isolate; overflow: hidden; background: radial-gradient(ellipse 50% 45% at 85% 12%, #101a1c 0%, transparent 72%), radial-gradient(ellipse 40% 45% at 95% 3%, rgba(43,54,62,.18), transparent 85%), #080a0e; }
+    .site::before { content: ""; pointer-events: none; position: absolute; z-index: -1; inset: 0; opacity: .29; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.17'/%3E%3C/svg%3E"); }
+    .topbar, main, .bottom { width: min(100% - 124px, 1450px); margin-inline: auto; }
+    .topbar { min-height: 117px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+    .brand { display: inline-flex; align-items: center; gap: 15px; font-weight: 650; font-size: 22px; letter-spacing: -.065em; text-decoration: none; color: var(--ink); }
+    .brandmark { width: 32px; height: 32px; display: block; filter: drop-shadow(0 0 10px rgba(110,235,190,.28)); }
+    .top-right { display: inline-flex; align-items: center; gap: 12px; font-size: 10px; text-transform: uppercase; letter-spacing: .20em; font-weight: 650; color: #aab5b4; }
+    .status-pulse { width: 7px; height: 7px; background: #a7f2c0; border-radius: 50%; box-shadow: 0 0 0 5px rgba(158,237,184,.075),0 0 17px rgba(162,250,192,.48); animation: pulse 3s ease-in-out infinite; }
+    .status-label-short { display: none; }
+    main { flex: 1; padding: 88px 0 110px; }
+    .content { max-width: 700px; }
+    .eyebrow { display: flex; gap: 17px; align-items: center; color: var(--mint); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .24em; margin: 0 0 30px; }
+    .eyebrow::before { content: ""; width: 30px; height: 1px; background: #a0dcb9; }
+    h1 { font-size: clamp(48px, 5.4vw, 84px); line-height: 1.04; letter-spacing: -.07em; font-weight: 550; margin: 0; }
+    .lead { margin: 30px 0 0; color: var(--soft); font-size: clamp(18px, 1.45vw, 21px); font-weight: 380; line-height: 1.75; letter-spacing: -.019em; }
+    section { margin-top: 64px; padding-top: 36px; border-top: 1px solid var(--line); }
+    h2 { margin: 0 0 18px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .22em; color: #c9d3cf; }
+    p { margin: 0 0 18px; color: var(--soft); font-size: 17px; font-weight: 380; line-height: 1.8; letter-spacing: -.01em; }
+    p:last-child { margin-bottom: 0; }
+    .bottom { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 27px 0 34px; border-top: 1px solid var(--line); }
+    .copyright, .signature { text-transform: uppercase; font-size: 10px; font-weight: 600; letter-spacing: .18em; color: #8b9597; white-space: nowrap; }
+    .signature { color: #a4adae; }
+    .copyright a { color: inherit; text-decoration: none; transition: color .2s; }
+    .copyright a:hover, .copyright a:focus-visible, .copyright a[aria-current] { color: var(--mint); }
+    .copyright .sep { margin: 0 .7em; opacity: .6; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .45; } }
+    @media (max-width: 1050px) {
+      .topbar, .bottom, main { width: calc(100% - 84px); }
+    }
+    @media (max-width: 680px) {
+      .topbar, .bottom, main { width: calc(100% - 46px); }
+      .topbar { min-height: 84px; }
+      .brand { font-size: 20px; }
+      .brandmark { width: 28px; height: 28px; }
+      .top-right { font-size: 9px; letter-spacing: .13em; gap: 10px; }
+      .status-label-full { display: none; }
+      .status-label-short { display: inline; }
+      main { padding: 56px 0 72px; }
+      .eyebrow { font-size: 9px; letter-spacing: .18em; gap: 11px; margin-bottom: 22px; }
+      .eyebrow::before { width: 22px; }
+      h1 { letter-spacing: -.06em; }
+      .lead { margin-top: 22px; font-size: 17px; }
+      section { margin-top: 44px; padding-top: 28px; }
+      p { font-size: 16px; line-height: 1.75; }
+      .bottom { padding-top: 23px; padding-bottom: 27px; flex-wrap: wrap; row-gap: 10px; }
+      .copyright, .signature { font-size: 9px; letter-spacing: .1em; }
+    }
+    @media (max-width: 365px) {
+      .topbar, .bottom, main { width: calc(100% - 36px); }
+      .top-right { letter-spacing: 0; font-size: 8px; }
+      .brand { gap: 8px; font-size: 18px; }
+      .brandmark { width: 24px; height: 24px; }
+      h1 { font-size: 44px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Metaphasor home">
+        <img class="brandmark" src="mark.png" width="32" height="32" alt="">
+        metaphasor
+      </a>
+      <div class="top-right"><span class="status-pulse" aria-hidden="true"></span> <span class="status-label-full">Independent AI / In development</span><span class="status-label-short">In development</span></div>
+    </header>
+
+    <main>
+      <article class="content">
+        <p class="eyebrow">About</p>
+        <h1>About Metaphasor</h1>
+        <p class="lead">Metaphasor is an independent artificial intelligence company founded by Chris Speciale.</p>
+
+        <section>
+          <h2>The founder</h2>
+          <p>Chris has spent his career building the tools other developers build on. He helps maintain OpenFL and Lime, open-source frameworks used to create games and applications across many platforms, and through Dimensionscape he works on compilers, runtimes and developer tooling across the Haxe ecosystem.</p>
+          <p>That work has given him a close, first-hand view of how software actually gets made: by many hands, across many projects, and increasingly with AI doing part of the work. It has also shown him where today's ways of working start to break down.</p>
+        </section>
+
+        <section>
+          <h2>Why Metaphasor</h2>
+          <p>Metaphasor grew out of that experience. We believe the way software is built is about to change more in the next few years than it has in decades, and we intend to help lead that change.</p>
+        </section>
+
+        <section>
+          <h2>How we work</h2>
+          <p>We are research-led. Every idea starts as careful design and written research, and is tested against real-world work before it ships. We are independent, we take the long view, and we build quietly until there is something worth showing.</p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="bottom">
+      <span class="copyright">© <span id="year">2026</span> Metaphasor<span class="sep" aria-hidden="true">·</span><a href="/about" aria-current="page">About</a><span class="sep" aria-hidden="true">·</span><a href="https://investors.metaphasor.com/">Investors</a></span>
+      <span class="signature">The future is in formation.</span>
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
